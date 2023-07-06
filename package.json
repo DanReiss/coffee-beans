@@ -1,0 +1,23 @@
+{
+  "name": "coffee-shop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "dev": "parcel index.html --no-cache"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanReiss/coffee-beans.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanReiss/coffee-beans/issues"
+  },
+  "homepage": "https://github.com/DanReiss/coffee-beans#readme",
+  "dependencies": {
+    "motion": "^10.16.2"
+  }
+}
