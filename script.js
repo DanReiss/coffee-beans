@@ -5,7 +5,7 @@ const wrapper = document.querySelector(".carousel-wrapper")
 
 const scrollOptions = {
   target: wrapper,
-  offset: ["start -200px", "-200px end"]
+  offset: ["start start", "end end"]
 }
 
 scroll(
@@ -16,4 +16,9 @@ scroll(
 scroll(
   animate('.carousel[data-direction="right"]',{ x: 250 }),
   scrollOptions
+)
+
+scroll(
+  animate('.navbar', { background: '#fff', padding: "0.25rem 1rem" }),
+  {offset: [0, "100px"]}
 )
