@@ -94,7 +94,7 @@ body{
 
 .carousel{
   width: 100%;
-  @include flex(row);
+  @include flex($direction: row, $justify: center);
   gap: $carousel-gap;
 
   

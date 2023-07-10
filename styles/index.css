@@ -91,7 +91,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  justify-content: stretch;
+  justify-content: center;
   gap: 1rem;
 }
 .carousel .carousel-image {
