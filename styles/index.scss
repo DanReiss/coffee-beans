@@ -116,6 +116,52 @@ body{
   }
 }
 
+.release-section{
+  margin: 4rem 0;
+  padding-bottom: 2.5rem;
+  background:
+    linear-gradient(139deg, rgba(49,26,16,1) 0%, rgba(105,69,30,1) 50%, rgba(26,23,19,0.7539390756302521) 86%),
+    url('../assets/images/patryk-gauza-vs0tzSHVcac-unsplash\ \(1\).jpg');
+  background-size: cover;
+  color: $white;
+  @include flex($direction: column);
+
+  .tag{
+    position: relative;
+    top: 15%;
+    left: -22.5%;
+    clip-path: inset(0% 0% -200% 0% round 10px);
+
+    h2{
+      padding: 0.1rem 3rem;
+      font-family: 'Oranienbaum', system-ui, -apple-system, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-size: xx-large;
+      font-weight: normal;
+      background-color: #4B3622;
+      border: 3px solid #DE9E3D;
+      rotate: -35deg;
+    }
+  }
+
+  .product{
+    @include flex($direction: column, $align: center);
+    font-family: 'Vollkorn', sans-serif;
+    font-size: small;
+    gap: 5px;
+    width: min-content;
+
+    &:nth-child(even){
+      align-self: end;
+    }
+
+    img{
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+    }
+  }
+}
+
 
 
 
