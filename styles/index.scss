@@ -13,6 +13,10 @@ body{
   width: 100%;
 }
 
+.red{
+  color: $light-red;
+}
+
 .navbar{
   width: 100%;
   @include flex(row, space-between);
@@ -59,10 +63,6 @@ body{
   h2{
     font-size: 1.5rem;
     font-weight: normal;
-
-    &.red{
-      color: $light-red;
-    }
   }
 
   hr{
@@ -158,6 +158,67 @@ body{
       border-radius: 50%;
       width: 200px;
       height: 200px;
+    }
+  }
+}
+
+.schedule-section{
+  @include flex($direction: column, $align: center);
+  margin: 4rem 0;
+  padding: 0 1rem;
+  font-family: 'Oranienbaum', system-ui, -apple-system, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-transform: uppercase;
+
+  h2{
+    position: relative;
+    display: inline-block;
+    margin: 0 auto 2rem auto;
+    font-weight: normal;
+    font-size: xx-large;
+    color: $red;
+
+    &::after{
+      content: "";
+      display: block;
+      margin-top: 0.25rem;
+      width: 100%;
+      height: 1px;
+      background-color: $red;
+    }
+
+    &::before{
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      transform: translateY(50%);
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: $red;
+      clip-path: inset(50% 0 0 0);
+    }
+  }
+
+  ul{
+    font-size: large;
+    list-style-type: none;
+  }
+
+  li{
+    border-bottom: 1px solid $gray;
+
+    &:not(:first-child){
+      margin-top: 2.5rem;
+    }
+
+    span{
+      display: block;
+      margin: 0.25rem 0;
+    }
+    span.red{
+      font-size: x-large;
     }
   }
 }
