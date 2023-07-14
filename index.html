@@ -17,17 +17,28 @@
       <button class="nav-button" aria-label="toogle navbar">
         <img src="./assets/navbar.svg" alt="">
       </button>
-      <ul>
-        <a href="#">
-          <li>Contact</li>
-        </a><a href="">
-          <li>Home</li>
-        </a><a href="">
-          <li>Products</li>
-        </a><a href="">
-          <li>About Us</li>
-        </a>
-      </ul>
+      <div class="nav-list-toogle hidden">
+        <button class="nav-button-close">X Close</button>
+        <ul>
+          <a href="#">
+            <li>Home</li>
+          </a><a href="">
+            <li>Contact</li>
+          </a><a href="">
+            <li>Products</li>
+          </a><a href="">
+            <li>About Us</li>
+          </a>
+        </ul>
+        <div class="baseboard">
+          <svg width="371" height="27" viewBox="0 0 371 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1.05753 15C1.05753 15 171.555 38.5 175.062 16" stroke="#740001"/>
+            <path d="M370.005 15C370.005 15 199.508 38.5 196 16" stroke="#740001"/>
+            <path d="M186 0L186.794 7.90783L194.56 6.21885L187.284 9.41717L191.29 16.2812L186 10.35L180.71 16.2812L184.716 9.41717L177.44 6.21885L185.206 7.90783L186 0Z" fill="#740001"/>
+          </svg>
+          <span>Coffee Beans</span>
+        </div>
+      </div>
    </nav>
   <main>
     <div class="first-section">
@@ -117,6 +128,7 @@
     </div>
   </main>
 
-  <script type="module" src="script.js"></script>
+  <script type="module" src="scripts/script.js"></script>
+  <script type="module" src="scripts/animate.js"></script>
 </body>
 </html>
