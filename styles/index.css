@@ -11,6 +11,16 @@ body {
   font-family: "Oranienbaum", system-ui, -apple-system, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+ul {
+  list-style-type: none;
+}
+
+a {
+  color: inherit;
+  height: -moz-min-content;
+  height: min-content;
+}
+
 .red {
   color: #992C2C;
 }
@@ -61,7 +71,6 @@ body {
   border: none;
 }
 .navbar ul {
-  list-style-type: none;
   width: -moz-fit-content;
   width: fit-content;
 }
@@ -355,9 +364,6 @@ body {
   -webkit-clip-path: inset(50% 0 0 0);
           clip-path: inset(50% 0 0 0);
 }
-.schedule-section ul {
-  list-style-type: none;
-}
 @media (min-width: 768px) {
   .schedule-section ul {
     width: 75%;
@@ -378,6 +384,48 @@ body {
   display: block;
   font-size: clamp(1.76rem, 1.72rem + 0.24vw, 1.95rem);
   margin: 0.25rem 0;
+}
+
+footer {
+  width: 100%;
+  background-color: #48260C;
+  color: #F9EAE4;
+  padding: 2rem 1rem;
+  display: grid;
+  gap: 2rem 1rem;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "cd cd" "nav social" "logo logo";
+}
+footer .footer-company-desc {
+  grid-area: cd;
+}
+footer .footer-navigation {
+  grid-area: nav;
+}
+footer .footer-logo {
+  grid-area: logo;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: stretch;
+  gap: 0;
+}
+footer .footer-logo svg {
+  width: 100%;
+}
+footer ul {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: stretch;
+  gap: 0.6rem;
+}
+footer a {
+  text-decoration: none;
+}
+footer h3 {
+  font-size: clamp(1.35rem, 1.28rem + 0.37vw, 1.56rem);
+  margin-bottom: 0.75rem;
 }
 
 html {
