@@ -5,7 +5,7 @@ const wrapper = document.querySelector(".carousel-wrapper")
 
 const scrollOptions = {
   target: wrapper,
-  offset: ["start start", "end end"]
+  offset: ["start start", "end end"],
 }
 
 scroll(
@@ -19,7 +19,7 @@ scroll(
 )
 
 scroll(
-  animate('.navbar', { background: '#fff', padding: "0.25rem 1rem" }),
+  animate('.navbar', { background: '#fff'}),
   {offset: [0, "100px"]}
 )
 
@@ -29,7 +29,7 @@ const navCloseBtn = document.querySelector('.nav-button-close');
 navOpenBtn.addEventListener('click', ()=>{
   animate(    
     '.nav-list-toogle', 
-    {x: [-500, 0]},
+    {x: ['-100%', 0]},
     {easing: "ease-in"}
   )
 })

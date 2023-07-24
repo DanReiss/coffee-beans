@@ -1,6 +1,31 @@
-@mixin flex($direction: initial, $justify: stretch, $align: stretch) {
+@mixin flex($direction: initial, $justify: stretch, $align: stretch, $gap: 0) {
   display: flex;
   flex-direction: $direction;
   align-items: $align;
   justify-content: $justify;
+  gap: $gap;
+}
+
+@mixin small {
+  @media (min-width: $sm-width) {
+    @content
+  }
+}
+
+@mixin medium {
+  @media (min-width: $md-width) {
+    @content
+  }
+}
+
+@mixin large {
+  @media (min-width: $lg-width) {
+    @content
+  }
+}
+
+@mixin xlarge {
+  @media (min-width: $xl-width) {
+    @content
+  }
 }

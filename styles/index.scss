@@ -11,14 +11,19 @@ body{
   background-color: #ffffff;
   max-width: 100vw;
   width: 100%;
+  font-family: 'Oranienbaum', system-ui, -apple-system, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .red{
   color: $light-red;
 }
 
+.container{
+  max-width: 1400px;
+}
+
 .navbar{
-  @include flex(row, space-between);
+  @include flex($direction: row, $justify: space-between, $align: center);
   width: 100%;
   position: fixed;
   z-index: 1;
@@ -26,11 +31,27 @@ body{
   background: #ffffff;
   background: linear-gradient(0deg, #00000000 0%, #e2e1e1d1 45%, #7A552F 90%);
 
+
+  @include medium{
+    padding: 1.25rem 3rem;
+  }
+
+  @include large{
+    padding: 0.25rem 5rem;    
+
+    .nav-button, .nav-button-close, .baseboard{
+      display: none;
+    }
+  }
+
   a{
     color: $red;
     text-decoration: none;
     font-size: 2.5rem;
-    font-family: 'Oranienbaum', system-ui, -apple-system, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    @include large{
+      font-size: 1.75rem;
+    }
   }
 
   button{
@@ -41,10 +62,9 @@ body{
 
   ul{
     list-style-type: none;
+    width: fit-content;
 
-    li{
-      padding: 1rem 0;
-    }
+    li{ padding: 1rem 0;}
   }
 
   .nav-list-toogle{
@@ -55,6 +75,18 @@ body{
     inset: 0;
     padding: 2rem 1.5rem;
     background-color:  #D9D9D9;
+
+    @include large{
+      width: fit-content;
+      position: static;
+      background-color: initial;
+      padding: 0;
+
+      ul{
+        @include flex($direction: row, $gap: 2.25rem);
+        li{ padding: 0; }
+      }
+    }
 
     .baseboard{
       max-width: 100%;
@@ -71,6 +103,7 @@ body{
 
   .nav-list-toogle.hidden{
     display: none;
+    @include large{ display: flex; }
   }
 
   .logo{
@@ -80,7 +113,7 @@ body{
   .nav-button-close{
     align-self: flex-end;
     font-size: 2rem;
-    font-family: 'Oranienbaum', system-ui, -apple-system, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: initial;
     color: $red;
   }
 }
@@ -101,22 +134,43 @@ body{
     font-weight: normal;
     font-family: 'Six Caps', sans-serif;
     color: $dark-gray;
+
+    @include small{
+      font-size: 9rem;
+      line-height: 9rem;
+    }
+
+    @include medium{
+      font-size: 12rem;
+      line-height: 12rem;
+    }
   }
 
   h2{
-    font-size: 1.5rem;
+    font-size: clamp(1.6rem, calc(1.6rem + 0.24vw), 2.1rem);
     font-weight: normal;
   }
 
   hr{
-    width: 75vw;
+    max-width: 80vw;
+    width: 20rem;
     background-color: $gray;
     margin: 0.5rem 0;
+
+    @include medium{
+      width: 25rem;
+      margin: 0.5rem 0;
+    }
   }
 
   .image-wrapper{
-    width: 75vw;
+    max-width: 80vw;
+    width: 20rem;
     clip-path: circle(60% at 50% 70%);
+
+    @include medium{
+      width: 30rem;
+    }
 
     img{
       width: 100%;
@@ -132,19 +186,28 @@ body{
 
   .carousel:first-child{
    margin-bottom: $carousel-gap;
+
+   @include small{
+    margin-bottom: calc($carousel-gap * 2);
+   }
   }
 }
 
 .carousel{
-  width: 100%;
   @include flex($direction: row, $justify: center);
   gap: $carousel-gap;
 
-  
+  @include small{gap: calc($carousel-gap * 2)}
+  @include medium{gap: calc($carousel-gap * 4 )}
+
   .carousel-image{
-    width: 9rem;
+    width: calc(7.5rem + 5vw);
     height: 100%;
     flex-shrink: 0;
+
+    @include medium{
+      width: 12srem;
+    }
 
     img{
       aspect-ratio: 1 / 1;
@@ -155,53 +218,73 @@ body{
   }
 
   .carousel-image.aspect-4X3 img{
-    height: 12rem;
+    aspect-ratio: 3 / 4;
   }
 }
 
 .release-section{
+  position: relative;
   margin: 4rem 0;
-  padding-bottom: 2.5rem;
+  padding: 5rem 0;
   background:
     linear-gradient(139deg, rgba(49,26,16,1) 0%, rgba(105,69,30,1) 50%, rgba(26,23,19,0.7539390756302521) 86%),
-    url('../assets/images/patryk-gauza-vs0tzSHVcac-unsplash\ \(1\).jpg');
+    url('../assets/images/patryk-gauza-vs0tzSHVcac-unsplash312.jpg');
   background-size: cover;
   color: $white;
-  @include flex($direction: column);
 
   .tag{
-    position: relative;
-    top: 15%;
-    left: -22.5%;
-    clip-path: inset(0% 0% -200% 0% round 10px);
+    position: absolute;
+    top: 2.5rem;
+    left: -7.5rem;
+    width: 25rem;
+    clip-path: inset(-2.5rem 0% -200% 0%);
+
+    @include large{
+      width: 30rem;
+      left: -5rem;
+      top: 4rem;
+      clip-path: inset(-4rem 0% -200% 0%);
+    }
 
     h2{
-      padding: 0.1rem 3rem;
-      font-family: 'Oranienbaum', system-ui, -apple-system, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      font-size: xx-large;
-      font-weight: normal;
+      font-size: clamp(2.33rem, calc(2.12rem + 1.20vw), 3.05rem);
+      text-align: center;
       background-color: #4B3622;
       border: 3px solid #DE9E3D;
-      rotate: -35deg;
+      transform: rotate(-35deg);
+    }
+  }
+
+  .products{
+    @include flex($direction: column);
+    width: 100%;
+    
+    @include small{
+      width: 75%;
+      margin: 0 auto;
     }
   }
 
   .product{
     @include flex($direction: column, $align: center);
     font-family: 'Vollkorn', sans-serif;
-    font-size: small;
+    font-size: clamp(1.00rem, calc(0.94rem + 0.36vw), 1.25rem);
     gap: 5px;
     width: min-content;
 
-    &:nth-child(even){
+    &:nth-child(odd){
       align-self: end;
     }
 
     img{
       border-radius: 50%;
-      width: 200px;
-      height: 200px;
+      width: calc(11rem + 4vw);
+      height: calc(11rem + 4vw);
       object-fit: cover;
+
+      @include small{
+        
+      }
     }
   }
 }
@@ -210,16 +293,19 @@ body{
   @include flex($direction: column, $align: center);
   margin: 4rem 0;
   padding: 0 1rem;
-  font-family: 'Oranienbaum', system-ui, -apple-system, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   text-transform: uppercase;
 
   h2{
     position: relative;
     display: inline-block;
     margin: 0 auto 2rem auto;
-    font-weight: normal;
-    font-size: xx-large;
+    font-weight: bold;
+    font-size: clamp(2.20rem, calc(2.14rem + 0.30vw), 2.44rem);
     color: $red;
+
+    @include medium{
+      margin: 0 auto 4rem auto;
+    }
 
     &::after{
       content: "";
@@ -246,8 +332,11 @@ body{
   }
 
   ul{
-    font-size: large;
     list-style-type: none;
+
+    @include medium{
+      width: 75%;
+    }
   }
 
   li{
@@ -255,16 +344,24 @@ body{
 
     &:not(:first-child){
       margin-top: 2.5rem;
+
+      @include medium{
+        margin-top: 3.5rem;
+      }
     }
 
     span{
       display: block;
+      font-size: clamp(1.76rem, calc(1.72rem + 0.24vw), 1.95rem);
       margin: 0.25rem 0;
     }
-    span.red{
-      font-size: x-large;
-    }
   }
+}
+
+
+html {
+  visibility: visible;
+  opacity: 1;
 }
 
 
