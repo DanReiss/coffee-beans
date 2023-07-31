@@ -35,7 +35,7 @@ a{
   width: 100%;
   position: fixed;
   z-index: 1;
-  padding: 0.75rem 1rem;
+  padding: 0.4rem 1rem;
   background: #ffffff;
   background: linear-gradient(0deg, #00000000 0%, #e2e1e1d1 45%, #7A552F 90%);
 
@@ -189,7 +189,6 @@ a{
   overflow: hidden;
   position: relative;
   width: 100%;
-  margin: 4rem 0;
 
   .carousel:first-child{
    margin-bottom: $carousel-gap;
@@ -231,7 +230,6 @@ a{
 
 .release-section{
   position: relative;
-  margin: 4rem 0;
   padding: 5rem 0;
   background:
     linear-gradient(139deg, rgba(49,26,16,1) 0%, rgba(105,69,30,1) 50%, rgba(26,23,19,0.7539390756302521) 86%),
@@ -265,10 +263,15 @@ a{
   .products{
     @include flex($direction: column);
     width: 100%;
+    margin: 0 auto;
     
     @include small{
-      width: 75%;
-      margin: 0 auto;
+      width: 85%;
+    }
+
+    @include medium{
+      padding: 2rem 0;
+      @include flex($direction: row, $justify: space-around)
     }
   }
 
@@ -285,8 +288,8 @@ a{
 
     img{
       border-radius: 50%;
-      width: calc(11rem + 4vw);
-      height: calc(11rem + 4vw);
+      width: calc(11rem + 6vw);
+      height: calc(11rem + 6vw);
       object-fit: cover;
 
       @include small{
@@ -298,7 +301,6 @@ a{
 
 .schedule-section{
   @include flex($direction: column, $align: center);
-  margin: 4rem 0;
   padding: 0 1rem;
   text-transform: uppercase;
 
@@ -363,27 +365,49 @@ a{
   }
 }
 
+.release-section, .carousel-wrapper, .schedule-section{
+  margin-bottom: 5rem;
+  margin-top: 5rem;
+
+  @include medium{
+    margin-bottom: 8rem;
+    margin-top: 8rem;
+  }
+}
+
 footer{
   width: 100%;
   background-color: $brown;
   color: $white;
-  padding: 2rem 1rem;
+  padding: 3rem 1rem;
   display: grid;
   gap: 2rem 1rem;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   grid-template-areas: 
                 'cd cd'
                 'nav social'
                 'logo logo';
+  font-size: clamp(1.00rem, calc(0.94rem + 0.36vw), 1.25rem);
+
+
+  @include medium{
+    justify-items: center;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+                    'cd nav social'
+                    'logo logo logo';
+    padding: 4rem 10%;
+    gap: 3rem 1rem;
+  }
 
   .footer-company-desc{grid-area: cd;}
 
   .footer-navigation{grid-area: nav;}
 
   .footer-logo{
-    grid-area: logo;
     @include flex($direction: column, $align: center);
-    
+    gap: 1rem;
+    grid-area: logo;
     svg{ width: 100%;}
   }
   

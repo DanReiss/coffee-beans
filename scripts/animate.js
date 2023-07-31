@@ -1,20 +1,20 @@
 'use strict'
-import { animate, scroll, inView, on } from  'motion'
+import { animate, scroll, inView } from  'motion';
 
-const wrapper = document.querySelector(".carousel-wrapper")
+const wrapper = document.querySelector(".carousel-wrapper");
 
 const scrollOptions = {
   target: wrapper,
-  offset: ["start start", "end end"],
+  offset: ["start -100px", "end end"],
 }
 
 scroll(
-  animate('.carousel[data-direction="left"]',{ x: -250 }),
+  animate('.carousel[data-direction="left"]',{ x: -350 }),
   scrollOptions
 )
 
 scroll(
-  animate('.carousel[data-direction="right"]',{ x: 250 }),
+  animate('.carousel[data-direction="right"]',{ x: 350 }),
   scrollOptions
 )
 
@@ -22,6 +22,22 @@ scroll(
   animate('.navbar', { background: '#fff'}),
   {offset: [0, "100px"]}
 )
+
+inView('[data-animate="opacity"]', ({target})=>{
+  animate(
+    target, 
+    {opacity: [0, 1]},
+    { delay: 0.2, duration: 0.9}
+  )
+
+  return ({target}) => {
+    animate(
+      target,
+      {opacity: [1, 0]},
+      { delay: 0.2, duration: 0.9}
+    )
+  }
+})
 
 const navOpenBtn = document.querySelector('.nav-button');
 const navCloseBtn = document.querySelector('.nav-button-close');
