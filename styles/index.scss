@@ -22,13 +22,9 @@ a{
   height: min-content;
 }
 
-.red{
-  color: $light-red;
-}
+.red{ color: $light-red; }
 
-.container{
-  max-width: 1400px;
-}
+.container{ max-width: 1400px; }
 
 .navbar{
   @include flex($direction: row, $justify: space-between, $align: center);
@@ -102,9 +98,7 @@ a{
       font-size: 2rem;
       color: $red;
 
-      svg{
-        width: 100%;
-      }
+      svg{ width: 100%; }
     }
   }
 
@@ -113,9 +107,7 @@ a{
     @include large{ display: flex; }
   }
 
-  .logo{
-    width: 2.6rem;
-  }
+  .logo{ width: 2.6rem; }
 
   .nav-button-close{
     align-self: flex-end;
@@ -175,13 +167,9 @@ a{
     width: 20rem;
     clip-path: circle(60% at 50% 70%);
 
-    @include medium{
-      width: 30rem;
-    }
+    @include medium{ width: 30rem; }
 
-    img{
-      width: 100%;
-    }
+    img{ width: 100%; }
   }
 }
 
@@ -193,9 +181,7 @@ a{
   .carousel:first-child{
    margin-bottom: $carousel-gap;
 
-   @include small{
-    margin-bottom: calc($carousel-gap * 2);
-   }
+   @include small{ margin-bottom: calc($carousel-gap * 2); }
   }
 }
 
@@ -204,16 +190,12 @@ a{
   gap: $carousel-gap;
 
   @include small{gap: calc($carousel-gap * 2)}
-  @include medium{gap: calc($carousel-gap * 4 )}
+  @include medium{gap: calc($carousel-gap * 6 )}
 
   .carousel-image{
     width: calc(7.5rem + 5vw);
     height: 100%;
     flex-shrink: 0;
-
-    @include medium{
-      width: 12srem;
-    }
 
     img{
       aspect-ratio: 1 / 1;
@@ -223,9 +205,7 @@ a{
     }
   }
 
-  .carousel-image.aspect-4X3 img{
-    aspect-ratio: 3 / 4;
-  }
+  .carousel-image.aspect-4X3 img{ aspect-ratio: 3 / 4; }
 }
 
 .release-section{
@@ -282,19 +262,26 @@ a{
     gap: 5px;
     width: min-content;
 
-    &:nth-child(odd){
-      align-self: end;
-    }
+    &:nth-child(odd){ align-self: end; }
 
     img{
       border-radius: 50%;
       width: calc(11rem + 6vw);
       height: calc(11rem + 6vw);
       object-fit: cover;
+    }
+  }
+}
 
-      @include small{
-        
-      }
+
+.delivery-section{
+  margin: 0 auto;
+  @include flex($direction: row, $justify: space-around);
+  max-width: 500px;
+
+  @include medium{
+    img{
+      scale: 1.35;
     }
   }
 }
@@ -365,7 +352,7 @@ a{
   }
 }
 
-.release-section, .carousel-wrapper, .schedule-section{
+.release-section, .carousel-wrapper, .schedule-section, .delivery-section{
   margin-bottom: 5rem;
   margin-top: 5rem;
 
@@ -406,9 +393,18 @@ footer{
 
   .footer-logo{
     @include flex($direction: column, $align: center);
-    gap: 1rem;
+    gap: 1.3rem;
     grid-area: logo;
-    svg{ width: 100%;}
+    img{
+      width: 2.5rem;
+      @include medium{ width: 2.75rem; }
+    }
+
+    @include medium{
+      svg{ scale: 1.5;}
+    }
+
+    .footer-logo-delivery{ @include flex($direction: row, $gap: 10px); }
   }
   
   ul{
