@@ -279,9 +279,29 @@ a{
   @include flex($direction: row, $justify: space-around);
   max-width: 500px;
 
+  img{ border-radius: 15px; }
+
+  a{ position: relative; }
+
+  a::before{
+    content: url('/assets/arrow-up-right-svgrepo-com\ \(1\).svg');
+    display: block;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    border-radius: 0 15px;
+    transition: all 300ms;
+    background-color: #00000058;
+    width: 25px;
+    height: 25px;
+    z-index: 2;
+  }
+
+  a.active::before{ opacity: 1; }
+
   @include medium{
-    img{
-      scale: 1.35;
+    img, a, a::before{
+      scale: 1.175;
     }
   }
 }
