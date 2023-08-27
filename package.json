@@ -2,10 +2,12 @@
   "name": "coffee-shop",
   "version": "1.0.0",
   "description": "",
-  "main": "script.js",
+  "targets": {
+    "main": false
+  },
   "scripts": {
     "dev": "npx parcel index.html --no-cache",
-    "build": "parcel index.html"
+    "build": "parcel build index.html --no-cache"
   },
   "repository": {
     "type": "git",
