@@ -39,7 +39,6 @@ inView('[data-animate="turning"]', ({target})=>{
     {rotateY: ["-30deg", 0], skewY: ["30deg", 0], opacity: [0, 1]},
     { delay: 0.2, duration: 0.5}
   )
-  return ({target}) => {};
 })
 
 const hoverElements = document.querySelectorAll('[data-animate="hover"]')

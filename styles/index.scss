@@ -420,6 +420,10 @@ footer{
       @include medium{ width: 2.75rem; }
     }
 
+    svg{
+      width: 100%;
+    }
+
     @include medium{
       svg{ scale: 1.5;}
     }
