@@ -41,7 +41,7 @@ a{
   }
 
   @include large{
-    padding: 0.25rem 5rem;    
+    padding: 0.75rem 5rem;    
 
     .nav-button, .nav-button-close, .baseboard{
       display: none;
@@ -394,8 +394,8 @@ footer{
                 'cd cd'
                 'nav social'
                 'logo logo';
-  font-size: clamp(1.00rem, calc(0.94rem + 0.36vw), 1.25rem);
-
+  font-size: $footer-fs;
+  line-height: calc(1.5 * $footer-fs );
 
   @include medium{
     justify-items: center;
@@ -435,7 +435,24 @@ footer{
     @include flex($direction: column, $gap: 0.6rem)
   }
 
-  a{text-decoration: none;}
+  a{
+    display: block;
+    text-decoration: none;
+    width: fit-content;
+
+    &::after{
+      content: "";
+      width: 0px;
+      height: 2px;
+      display: block;
+      background-color: #DE9E3D;
+      transition: all 300ms;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
 
   h3{
     font-size: clamp(1.35rem, calc(1.28rem + 0.37vw), 1.56rem);

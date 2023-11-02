@@ -29,8 +29,6 @@ inView('[data-animate="opacity"]', ({target})=>{
     {y: ["-20px", 0], opacity: [0, 1], filter: ["blur(0.1rem)", 0]},
     { delay: 0.3, duration: 0.5}
   )
-
-  return ({target}) => {};
 })
 
 inView('[data-animate="turning"]', ({target})=>{
