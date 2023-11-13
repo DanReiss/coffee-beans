@@ -21,7 +21,8 @@
   },
   "homepage": "https://github.com/DanReiss/coffee-beans#readme",
   "dependencies": {
-    "motion": "^10.16.2"
+    "motion": "^10.16.2",
+    "swiper": "^11.0.3"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.9.3"

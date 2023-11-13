@@ -19,7 +19,7 @@ scroll(
 )
 
 scroll(
-  animate('.navbar', { background: '#fff'}),
+  animate('.navbar', { background: '#f6f2f0', borderBottom: '1px solid #23272B'}),
   {offset: [0, "100px"]}
 )
 
@@ -66,7 +66,7 @@ const navCloseBtn = document.querySelector('.nav-button-close');
 
 navOpenBtn.addEventListener('click', ()=>{
   animate(    
-    '.nav-list-toogle', 
+    '.nav-list-mobile', 
     {x: ['-100%', 0]},
     {easing: "ease-in"}
   )
@@ -74,7 +74,7 @@ navOpenBtn.addEventListener('click', ()=>{
 
 navCloseBtn.addEventListener('click', ()=>{
   animate(
-    '.nav-list-toogle', 
+    '.nav-list-mobile', 
     {x: [0, '-100%']},
     {easing: "ease-out"} 
   )

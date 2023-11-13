@@ -13,24 +13,56 @@
 </head>
 <body>
    <nav class="navbar">
-      <a href="/">
-        <img src="./assets/logo.png" class="logo" alt="coffee shop logo">
+    <ul class="nav-right">
+      <li>
+        <a href="#">
+          Buy Beans
+        </a>
+      </li>
+      <li>
+        <a href="#">
+          Location
+        </a>
+      </li>
+    </ul>
+    <a href="/" class="desktop-logo">
+      <img src="./assets/logodesktop.png" alt="coffee shop logo">
+    </a>
+    <ul class="nav-left">
+      <li>
+        <a href="#">Contact</a>
+      </li>
+      <li>
+        <a href="#">Products</a>
+      </li>
+      <li>
+        <a href="#">About Us</a>
+      </li>
+    </ul>
+      <a href="/" class="mobile-logo">
+        <img src="./assets/logo.png" alt="coffee shop logo">
       </a>
       <button class="nav-button" aria-label="toogle navbar">
         <img src="./assets/navbar.svg" alt="">
       </button>
-      <div class="nav-list-toogle hidden">
+      <div class="nav-list-mobile hidden">
         <button class="nav-button-close">X Close</button>
         <ul>
-          <a href="#">
-            <li>Home</li>
-          </a><a href="#">
-            <li>Contact</li>
-          </a><a href="#">
-            <li>Products</li>
-          </a><a href="#">
-            <li>About Us</li>
-          </a>
+          <li >
+            <a href="#">Contact</a>
+          </li>
+          <li>
+            <a href="#">Products</a>
+          </li>
+          <li>
+            <a href="#">About Us</a>
+          </li>
+          <li>
+            <a href="#">Buy Beans</a>
+          </li>
+          <li>
+            <a href="#">Location</a>
+          </li>
         </ul>
         <div class="baseboard">
           <svg width="371" height="27" viewBox="0 0 371 27" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -125,6 +157,30 @@
         </div>
       </div>
     </div>
+    <div class="sale-of-beans-section">
+      <div class="sale-of-beans-text">
+        <h2>OUR PREMIUM BEANS</h2>
+        <button>Purchase now</button>
+        <p>
+          Our vineyards are entwined with the Borgo San Felice 
+          resort, we are one soul.As you meander through the lanes, once home to a school,bakery and olive press, you truly sense our history.Discover Chianti Classico’s 
+          original Relais & Châteaux and the flavours of our terroir.
+        </p>
+      </div>
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="./assets/images/delightin-dee-l7jWRY3H0x0-unsplash.png" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="./assets/images/george-dagerotip-XRY4giMaDoA-unsplash.png" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="./assets/images/sangga-rima-roman-selia-7XWTo9XPk5I-unsplash.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="delivery-section" data-animate="opacity">
       <a href="#" data-animate="hover">
         <img src="./assets/ifoodlogo.svg" alt="ifood logo">
@@ -199,5 +255,6 @@
 
   <script type="module" src="scripts/script.js"></script>
   <script type="module" src="scripts/animate.js"></script>
+  <script type="module" src="scripts/carousel.js"></script>
 </body>
 </html>
