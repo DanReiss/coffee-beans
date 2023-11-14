@@ -23,5 +23,9 @@
   "dependencies": {
     "motion": "^10.16.2",
     "swiper": "^11.0.3"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.10.2",
+    "parcel": "^2.10.2"
   }
 }
