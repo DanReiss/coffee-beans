@@ -570,6 +570,26 @@ html {
     transition: all 0.5s;
   }
 
+  .controls{
+    position: absolute;
+    z-index: 1;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: fit-content;
+    color: red;
+    margin: 1rem auto;
+    @include flex($direction: row, $gap: 1.25rem);
+  }
+
+  .swiper-button-prev img, .swiper-button-next img{
+    width: 50px;
+  }
+
+  .swiper-button-prev img{
+    scale: -1;
+  }
+
   @include large{
     aspect-ratio: 1 / 1;
     width: 100%;
@@ -580,6 +600,16 @@ html {
   
     .swiper-slide img{
       height: 100%;
+    }
+
+    .controls{
+      left: initial;
+      right: 0;
+      margin: 2rem;
+    }
+
+    .swiper-button-prev img, .swiper-button-next img{
+      width: 65px;
     }
   }
 
