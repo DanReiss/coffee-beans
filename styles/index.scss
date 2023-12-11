@@ -96,7 +96,7 @@ button{
       font-size: 2rem;
       color: $red;
 
-      svg{ width: 100%; }
+      img.decoration{ width: 100%; }
     }
   }
 
@@ -453,12 +453,12 @@ footer{
       @include medium{ width: 2.75rem; }
     }
 
-    svg{
+    img.decoration{
       width: 100%;
     }
 
     @include medium{
-      svg{ scale: 1.5;}
+      img.decoration{ scale: 1.5;}
     }
 
     .footer-logo-delivery{ @include flex($direction: row, $gap: 10px); }
